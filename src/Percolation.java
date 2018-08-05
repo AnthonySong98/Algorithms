@@ -2,7 +2,6 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -22,8 +21,9 @@ public class Percolation {
         if(row>=1&&row<=grid_size&&col>=1&&col<=grid_size) return true;
         else return false;
     }
-    public    void open(int row, int col)    // open site (row, col) if it is not open already
+    public    void open(int row, int col) // open site (row, col) if it is not open already
     {
+        if(validIndices(row,col)==false) throw new java.lang.IllegalArgumentException();
         if(grid[row][col]==false&&validIndices(row,col)) {
             grid[row][col]=true;
             num_of_open_sites++;
@@ -39,10 +39,12 @@ public class Percolation {
     }
     public boolean isOpen(int row, int col)  // is site (row, col) open?
     {
+        if(validIndices(row,col)==false) throw new java.lang.IllegalArgumentException();
         return grid[row][col]==true?true:false;
     }
     public boolean isFull(int row, int col)  // is site (row, col) full?
     {
+        if(validIndices(row,col)==false) throw new java.lang.IllegalArgumentException();
         return grid[row][col]==true&&weightedQuickUnionUF.connected(0,grid_size*(row-1)+col)?true:false;
     }
     public     int numberOfOpenSites()       // number of open sites
