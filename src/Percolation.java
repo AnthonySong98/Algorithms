@@ -73,6 +73,5 @@ public class Percolation {
         }
         System.out.println(percolation.percolates());
         System.out.println(percolation.numberOfOpenSites());
-
     }
 }
