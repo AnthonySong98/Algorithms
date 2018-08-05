@@ -7,13 +7,16 @@ import java.io.FileNotFoundException;
 
 public class Percolation {
     private WeightedQuickUnionUF weightedQuickUnionUF;
+    private WeightedQuickUnionUF weightedQuickUnionUF2;
     private int grid_size;
     private boolean [][]grid;
     private int num_of_open_sites;
     public Percolation(int n)           // create n-by-n grid, with all sites blocked
     {
+        if(n<=0) throw new IllegalArgumentException();
         grid_size = n;
         weightedQuickUnionUF = new WeightedQuickUnionUF(n*n+2);
+        weightedQuickUnionUF2 = new WeightedQuickUnionUF(n*n+1);
         grid = new boolean[n+1][n+1];
         num_of_open_sites = 0;
     }
@@ -28,12 +31,28 @@ public class Percolation {
             grid[row][col]=true;
             num_of_open_sites++;
             {
-                if(row>1&&isOpen(row-1,col)) weightedQuickUnionUF.union(grid_size*(row-1-1)+col,grid_size*(row-1)+col);
-                if(col>1&&isOpen(row,col-1)) weightedQuickUnionUF.union(grid_size*(row-1)+col-1,grid_size*(row-1)+col);
-                if(col<grid_size&&isOpen(row,col+1)) weightedQuickUnionUF.union(grid_size*(row-1)+col+1,grid_size*(row-1)+col);
-                if(row<grid_size&&isOpen(row+1,col)) weightedQuickUnionUF.union(grid_size*(row+1-1)+col,grid_size*(row-1)+col);
+                if(row>1&&isOpen(row-1,col)) {
+                    weightedQuickUnionUF.union(grid_size*(row-1-1)+col,grid_size*(row-1)+col);
+                    weightedQuickUnionUF2.union(grid_size*(row-1-1)+col,grid_size*(row-1)+col);
+                }
+                if(col>1&&isOpen(row,col-1)) {
+                    weightedQuickUnionUF.union(grid_size*(row-1)+col-1,grid_size*(row-1)+col);
+                    weightedQuickUnionUF2.union(grid_size*(row-1)+col-1,grid_size*(row-1)+col);
+                }
+                if(col<grid_size&&isOpen(row,col+1)) {
+                    weightedQuickUnionUF.union(grid_size*(row-1)+col+1,grid_size*(row-1)+col);
+                    weightedQuickUnionUF2.union(grid_size*(row-1)+col+1,grid_size*(row-1)+col);
+
+                }
+                if(row<grid_size&&isOpen(row+1,col)) {
+                    weightedQuickUnionUF.union(grid_size*(row+1-1)+col,grid_size*(row-1)+col);
+                    weightedQuickUnionUF2.union(grid_size*(row+1-1)+col,grid_size*(row-1)+col);
+                }
             }
-            if(row==1) weightedQuickUnionUF.union(0,grid_size*(row-1)+col);
+            if(row==1) {
+                weightedQuickUnionUF.union(0,grid_size*(row-1)+col);
+                weightedQuickUnionUF2.union(0,grid_size*(row-1)+col);
+            }
             if(row==grid_size) weightedQuickUnionUF.union(grid_size*grid_size+1,grid_size*(row-1)+col);
         }
     }
@@ -45,7 +64,7 @@ public class Percolation {
     public boolean isFull(int row, int col)  // is site (row, col) full?
     {
         if(validIndices(row,col)==false) throw new java.lang.IllegalArgumentException();
-        return grid[row][col]==true&&weightedQuickUnionUF.connected(0,grid_size*(row-1)+col)?true:false;
+        return grid[row][col]==true&&weightedQuickUnionUF2.connected(0,grid_size*(row-1)+col)?true:false;
     }
     public     int numberOfOpenSites()       // number of open sites
     {

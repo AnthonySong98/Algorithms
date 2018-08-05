@@ -6,6 +6,10 @@ import edu.princeton.cs.algs4.StdStats;
 
 public class PercolationStats {
     private double []threehold;
+    private double mean;
+    private double stddev;
+    private double confidenceLo;
+    private double confidenceHi;
 
     public PercolationStats(int n, int trials)    // perform trials independent experiments on an n-by-n grid
     {
@@ -25,22 +29,29 @@ public class PercolationStats {
             threehold[i]=(double)experiment.numberOfOpenSites()/(n*n);
         }
 
+        mean = StdStats.mean(threehold);
+        stddev = StdStats.stddev(threehold);
+        confidenceLo = mean-1.96*stddev/Math.sqrt(threehold.length);
+        confidenceHi = mean+1.96*stddev/Math.sqrt(threehold.length);
+
     }
     public double mean()                          // sample mean of percolation threshold
     {
-        return StdStats.mean(this.threehold);
+
+        return mean;
     }
     public double stddev()                        // sample standard deviation of percolation threshold
     {
-        return StdStats.stddev(this.threehold);
+
+        return stddev;
     }
     public double confidenceLo()                  // low  endpoint of 95% confidence interval
     {
-        return mean()-1.96*stddev()/Math.sqrt(threehold.length);
+        return confidenceLo;
     }
     public double confidenceHi()                  // high endpoint of 95% confidence interval
     {
-        return mean()+1.96*stddev()/Math.sqrt(threehold.length);
+        return confidenceHi;
     }
 
     public static void main(String[] args)        // test client (described below)
