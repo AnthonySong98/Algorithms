@@ -48,7 +48,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     {
         if(isEmpty()) throw new java.util.NoSuchElementException();
 
-        int targetIndex = (int)StdRandom.uniform(0,capacity);
+        int targetIndex = StdRandom.uniform(0,capacity);
         Item item = arr[targetIndex];
         arr[targetIndex] = arr[capacity-1];
         arr[capacity-1]=null;
@@ -63,7 +63,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     {
         if(isEmpty()) throw new java.util.NoSuchElementException();
 
-        int targetIndex = (int)StdRandom.uniform(0,capacity);
+        int targetIndex = StdRandom.uniform(0,capacity);
         Item item = arr[targetIndex];
         return item;
 
@@ -100,7 +100,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         public Item next() {
             if(!hasNext()) throw new NoSuchElementException();
 
-            int targetIndex = (int)StdRandom.uniform(0,i+1);
+            int targetIndex = StdRandom.uniform(0,i+1);
             Item item = temp[targetIndex];
             temp[targetIndex]=temp[i];
             temp[i] = item;

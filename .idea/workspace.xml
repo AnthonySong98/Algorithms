@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dc9584c-cd7c-453f-a0c7-68fc41d8d4e8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Permutation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/Deque.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/Deque.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RandomizedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomizedQueue.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RandomizedQueue.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RandomizedQueue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RandomizedQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2072">
-              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="-374">
+              <caret line="102" column="30" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3035#3043#0" expanded="true" />
@@ -62,7 +58,7 @@
       <file leaf-file-name="PercolationStats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PercolationStats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
+            <state relative-caret-position="353">
               <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -71,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Permutation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Permutation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Permutation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -103,8 +99,8 @@
         <option value="$PROJECT_DIR$/src/PercolationStats.java" />
         <option value="$PROJECT_DIR$/src/Percolation.java" />
         <option value="$PROJECT_DIR$/src/Deque.java" />
-        <option value="$PROJECT_DIR$/src/RandomizedQueue.java" />
         <option value="$PROJECT_DIR$/src/Permutation.java" />
+        <option value="$PROJECT_DIR$/src/RandomizedQueue.java" />
       </list>
     </option>
   </component>
@@ -276,12 +272,12 @@
       <workItem from="1533347566006" duration="212000" />
       <workItem from="1533379178557" duration="9756000" />
       <workItem from="1533439730751" duration="4186000" />
-      <workItem from="1533527026146" duration="9345000" />
+      <workItem from="1533527026146" duration="9376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23499000" />
+    <option name="totallyTimeSpent" value="23530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -482,27 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PercolationStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomizedQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2072">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3035#3043#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Percolation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -534,6 +509,27 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#168#176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PercolationStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomizedQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="102" column="30" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3035#3043#0" expanded="true" />
           </folding>
         </state>
       </provider>
