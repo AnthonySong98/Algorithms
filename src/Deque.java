@@ -141,7 +141,7 @@ public class Deque<Item> implements Iterable<Item> {
             }
             else if (item.equals("show")){
                 for (String s:deque)
-                    StdOut.print(s);
+                    StdOut.println(s);
             }
             else if (item.equals("-")){
                 if(!deque.isEmpty()){
