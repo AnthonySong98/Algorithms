@@ -94,6 +94,10 @@ public class Point implements Comparable<Point> {
 
     private class SlopeOrder implements Comparator<Point>
     {
+//        private Point p0;
+//        public SlopeOrder(Point invokePoint){
+//            p0 = invokePoint;
+//        }
         @Override
         public int compare(Point o1, Point o2) {
             double a = slopeTo(o1);

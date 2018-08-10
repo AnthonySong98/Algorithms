@@ -1,7 +1,10 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 public class FastCollinearPoints {
@@ -34,33 +37,78 @@ public class FastCollinearPoints {
 
         numberOfSegments = 0;
 
-        segments = new LineSegment[testPoints.length];
+        segments = new LineSegment[testPoints.length*testPoints.length/2];
 
         Arrays.sort(testPoints);
 
         for(i=0;i<testPoints.length;i++){
+            Point tempPoints[] = new Point[testPoints.length-1];
+            int pos = 0;
+            for(j=0;j<testPoints.length;j++){
+                if(i==j) continue;
+                tempPoints[pos++] = testPoints[j];
+            }
+            Arrays.sort(tempPoints,testPoints[i].slopeOrder());
+            for(j=0;j<tempPoints.length-2;j++){
+                if(testPoints[i].slopeTo(tempPoints[j])==testPoints[i].slopeTo(tempPoints[j+1])
+                        &&testPoints[i].slopeTo(tempPoints[j+1])==testPoints[i].slopeTo(tempPoints[j+2]))
+                {
+                    int s = j;double SLOPE = testPoints[i].slopeTo(tempPoints[j]);j=j+3;
+                    while(j<tempPoints.length&&testPoints[i].slopeTo(tempPoints[j])==SLOPE){
+                        j = j + 1;
+                    }
+                    if(j<=tempPoints.length){
+                        /*把testpoint[i],testpoint[s]到testpoint[j-1]存一下，排一下*/
+                        Point[] line = new Point[j-1-s+1+1];
+                        line[0] = testPoints[i];
+                        for (int r = 1;r<=j-s;r++) line[r] = tempPoints[s+r-1];
+                        Arrays.sort(line);
+                        segments[numberOfSegments++] = new LineSegment(line[0],line[j-s]);
+                        j = j - 1;
+                    }
+                    else {
+                        break;
+                    }
+                }
+
+            }
+
+
+
 
         }
 
     }
     public  int numberOfSegments()        // the number of line segments
     {
-        return 0;
+        return numberOfSegments;
     }
     public LineSegment[] segments()                // the line segments
     {
-        return new LineSegment[2];
+        LineSegment[]resSegments = new LineSegment[numberOfSegments];
+        for(int i = 0;i<numberOfSegments;i++)
+            resSegments[i] = segments[i];
+        return resSegments;
+
     }
 
     public static void main(String[] args) {
 
-        // read the n points from a file
-        In in = new In(args[0]);
-        int n = in.readInt();
+        try{
+            FileInputStream input = new FileInputStream("/Users/mac/Desktop/Algorithms/collinear/rs1423.txt");
+            System.setIn(input);
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+
+//        In in = new In(args[0]);
+//        int n = in.readInt();
+        int n = StdIn.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {
-            int x = in.readInt();
-            int y = in.readInt();
+            int x = StdIn.readInt();
+            int y = StdIn.readInt();
             points[i] = new Point(x, y);
         }
 

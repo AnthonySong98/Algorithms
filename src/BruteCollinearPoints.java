@@ -1,7 +1,10 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 public class BruteCollinearPoints {
@@ -36,7 +39,7 @@ public class BruteCollinearPoints {
 
         numberOfSegments = 0;
 
-        segments = new LineSegment[testPoints.length];
+        segments = new LineSegment[testPoints.length*testPoints.length/2];
 
         Arrays.sort(testPoints);
         for(i=0;i<testPoints.length;i++)
@@ -64,12 +67,21 @@ public class BruteCollinearPoints {
 
     public static void main(String[] args) {
         // read the n points from a file
-        In in = new In(args[0]);
-        int n = in.readInt();
+        try{
+            FileInputStream input = new FileInputStream("/Users/mac/Desktop/Algorithms/collinear/rs1423.txt");
+            System.setIn(input);
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+
+//        In in = new In(args[0]);
+//        int n = in.readInt();
+        int n = StdIn.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {
-            int x = in.readInt();
-            int y = in.readInt();
+            int x = StdIn.readInt();
+            int y = StdIn.readInt();
             points[i] = new Point(x, y);
         }
 
