@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dc9584c-cd7c-453f-a0c7-68fc41d8d4e8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/BruteCollinearPoints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/BruteCollinearPoints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/FastCollinearPoints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/FastCollinearPoints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/Point$SlopeOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/Point$SlopeOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BruteCollinearPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BruteCollinearPoints.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FastCollinearPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastCollinearPoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +42,8 @@
       <file leaf-file-name="FastCollinearPoints.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FastCollinearPoints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+            <state relative-caret-position="2182">
+              <caret line="152" column="104" selection-start-line="152" selection-start-column="104" selection-end-line="152" selection-end-column="104" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,8 +96,8 @@
       <file leaf-file-name="LineSegment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LineSegment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+            <state relative-caret-position="195">
+              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
               <folding>
                 <element signature="e#1097#1098#0" expanded="true" />
                 <element signature="e#1124#1125#0" expanded="true" />
@@ -154,7 +147,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="832" />
@@ -313,21 +306,21 @@
       <workItem from="1533379178557" duration="9756000" />
       <workItem from="1533439730751" duration="4186000" />
       <workItem from="1533527026146" duration="9593000" />
-      <workItem from="1533810905885" duration="16467000" />
+      <workItem from="1533810905885" duration="27925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40214000" />
+    <option name="totallyTimeSpent" value="51672000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="832" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="3" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32969698" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3292517" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -346,7 +339,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.44761905" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3987879" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -590,21 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LineSegment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding>
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1461#1462#0" expanded="true" />
-            <element signature="e#1845#1846#0" expanded="true" />
-            <element signature="e#1902#1903#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Percolation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -622,20 +600,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18090">
-          <caret line="1437" selection-start-line="1437" selection-end-line="1437" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/TimSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="354" selection-start-line="354" selection-end-line="354" />
         </state>
       </provider>
     </entry>
@@ -660,10 +624,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18090">
+          <caret line="1437" selection-start-line="1437" selection-end-line="1437" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/TimSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="354" selection-start-line="354" selection-end-line="354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LineSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+          <folding>
+            <element signature="e#1097#1098#0" expanded="true" />
+            <element signature="e#1124#1125#0" expanded="true" />
+            <element signature="e#1424#1425#0" expanded="true" />
+            <element signature="e#1461#1462#0" expanded="true" />
+            <element signature="e#1845#1846#0" expanded="true" />
+            <element signature="e#1902#1903#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FastCollinearPoints.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+        <state relative-caret-position="2182">
+          <caret line="152" column="104" selection-start-line="152" selection-start-column="104" selection-end-line="152" selection-end-column="104" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

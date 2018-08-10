@@ -10,23 +10,14 @@ import java.util.Arrays;
 public class FastCollinearPoints {
     private int numberOfSegments;
     private LineSegment[] segments;
-
+  //  private Point[][] helper;
     public FastCollinearPoints(Point[] points)     // finds all line segments containing 4 or more points
     {
-        if(points.length==0) throw new java.lang.IllegalArgumentException();
+        if(points == null) throw new java.lang.IllegalArgumentException();
         int i,j,k,l;
         for(i=0;i<points.length;i++){
             if (points[i]==null){
                 throw new java.lang.IllegalArgumentException();
-            }
-        }
-        for(i=0;i<points.length;i++){
-            for (j=0;j<points.length;j++){
-                if(i==j) continue;;
-                {
-                    if(points[i].slopeTo(points[j])==Double.NEGATIVE_INFINITY)
-                        throw new java.lang.IllegalArgumentException();
-                }
             }
         }
 
@@ -39,12 +30,19 @@ public class FastCollinearPoints {
 
         segments = new LineSegment[testPoints.length*testPoints.length/2];
 
+     //   helper = new Point[2][testPoints.length*testPoints.length/2];
+
         Arrays.sort(testPoints);
 
+        for (i = 0; i < testPoints.length-1; i++){
+            if(testPoints[i].compareTo(testPoints[i+1])==0) throw new java.lang.IllegalArgumentException();
+        }
+
+
         for(i=0;i<testPoints.length;i++){
-            Point tempPoints[] = new Point[testPoints.length-1];
+            Point tempPoints[] = new Point[testPoints.length-1-i];
             int pos = 0;
-            for(j=0;j<testPoints.length;j++){
+            for(j=i;j<testPoints.length;j++){
                 if(i==j) continue;
                 tempPoints[pos++] = testPoints[j];
             }
@@ -63,7 +61,10 @@ public class FastCollinearPoints {
                         line[0] = testPoints[i];
                         for (int r = 1;r<=j-s;r++) line[r] = tempPoints[s+r-1];
                         Arrays.sort(line);
+                        LineSegment se = new LineSegment(line[0],line[j-s]);
                         segments[numberOfSegments++] = new LineSegment(line[0],line[j-s]);
+//                        helper[0][numberOfSegments-1] = line[0];
+//                        helper[1][numberOfSegments-1] = line[j-s];
                         j = j - 1;
                     }
                     else {
@@ -85,17 +86,71 @@ public class FastCollinearPoints {
     }
     public LineSegment[] segments()                // the line segments
     {
+        if(numberOfSegments == 0) return new LineSegment[0];
         LineSegment[]resSegments = new LineSegment[numberOfSegments];
         for(int i = 0;i<numberOfSegments;i++)
             resSegments[i] = segments[i];
         return resSegments;
+/*
+
+        int i,j,k;
+        for (i = 0;i<numberOfSegments-1;i++){
+            for(j=i+1;j<numberOfSegments;j++){
+                if(helper[0][i].compareTo(helper[0][j])==1){
+                    Point temp1 = helper[0][i];
+                    helper[0][i] = helper[0][j];
+                    helper[0][j] = temp1;
+                    temp1 = helper[1][i];
+                    helper[1][i] = helper[1][j];
+                    helper[1][j] = temp1;
+                }
+                if(helper[0][i].compareTo(helper[0][j])==0){
+                    if(helper[1][i].compareTo(helper[1][j])==1){
+                        Point temp1 = helper[0][i];
+                        helper[0][i] = helper[0][j];
+                        helper[0][j] = temp1;
+                        temp1 = helper[1][i];
+                        helper[1][i] = helper[1][j];
+                        helper[1][j] = temp1;
+                    }
+                }
+
+            }
+        }
+
+        i=0;j=0;
+        while (j<numberOfSegments&&helper[0][i].compareTo(helper[0][j])==0&&helper[1][i].compareTo(helper[1][j])==0)
+            j++;
+        int cnt =0 ;
+        if(numberOfSegments == 0) return new LineSegment[0];
+        if(helper[0][0]!=null)
+        resSegments[cnt++]=new LineSegment(helper[0][0],helper[1][0]);
+
+        if (j<numberOfSegments) resSegments[cnt++]=new LineSegment(helper[0][j],helper[1][j]);
+        while (j<numberOfSegments){
+            i = j;
+            while (j<numberOfSegments&&helper[0][i].compareTo(helper[0][j])==0&&helper[1][i].compareTo(helper[1][j])==0){
+                j++;
+            }
+            if (j<numberOfSegments){
+                resSegments[cnt++]=new LineSegment(helper[0][j],helper[1][j]);
+            }
+        }
+
+        LineSegment[] res = new LineSegment[cnt];
+        for(i=0;i<cnt;i++)
+            res[i] = resSegments[i];
+        numberOfSegments = cnt ;
+
+        return res;
+*/
 
     }
 
     public static void main(String[] args) {
 
         try{
-            FileInputStream input = new FileInputStream("/Users/mac/Desktop/Algorithms/collinear/rs1423.txt");
+            FileInputStream input = new FileInputStream("/Users/mac/Desktop/Algorithms/collinear/random1.txt");
             System.setIn(input);
         }
         catch (FileNotFoundException e){
