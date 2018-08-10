@@ -40,9 +40,9 @@ public class FastCollinearPoints {
 
 
         for(i=0;i<testPoints.length;i++){
-            Point tempPoints[] = new Point[testPoints.length-1-i];
+            Point tempPoints[] = new Point[testPoints.length-1];
             int pos = 0;
-            for(j=i;j<testPoints.length;j++){
+            for(j=0;j<testPoints.length;j++){
                 if(i==j) continue;
                 tempPoints[pos++] = testPoints[j];
             }
@@ -61,8 +61,8 @@ public class FastCollinearPoints {
                         line[0] = testPoints[i];
                         for (int r = 1;r<=j-s;r++) line[r] = tempPoints[s+r-1];
                         Arrays.sort(line);
-                        LineSegment se = new LineSegment(line[0],line[j-s]);
-                        segments[numberOfSegments++] = new LineSegment(line[0],line[j-s]);
+                        //LineSegment se = new LineSegment(line[0],line[j-s]);
+                        if(line[0].compareTo(testPoints[i])==0) segments[numberOfSegments++] = new LineSegment(line[0],line[j-s]);
 //                        helper[0][numberOfSegments-1] = line[0];
 //                        helper[1][numberOfSegments-1] = line[j-s];
                         j = j - 1;
@@ -150,7 +150,7 @@ public class FastCollinearPoints {
     public static void main(String[] args) {
 
         try{
-            FileInputStream input = new FileInputStream("/Users/mac/Desktop/Algorithms/collinear/random1.txt");
+            FileInputStream input = new FileInputStream("/Users/mac/Desktop/Algorithms/collinear/rs1423.txt");
             System.setIn(input);
         }
         catch (FileNotFoundException e){
